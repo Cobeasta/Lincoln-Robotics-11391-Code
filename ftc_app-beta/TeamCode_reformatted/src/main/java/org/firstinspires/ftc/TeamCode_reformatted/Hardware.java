@@ -13,9 +13,8 @@ import com.qualcomm.robotcore.hardware.Servo;
 /**
  * Created by Coby on 12/1/2017.
  */
-//This is a stupid change
-public class Hardware {
 
+public class Hardware {
     HardwareMap hwMap;
     public BNO055IMU gyro;
    public Servo leftClaw;
