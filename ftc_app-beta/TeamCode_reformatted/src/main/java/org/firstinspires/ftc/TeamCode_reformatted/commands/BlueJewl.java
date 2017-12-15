@@ -25,6 +25,8 @@ public class BlueJewl implements BasicCommand {
         startTime = date.getTime();
     }
 
+
+
     @Override
     public void execute(Hardware robot) {
         date = new Date();
@@ -39,22 +41,25 @@ public class BlueJewl implements BasicCommand {
 
       else if(date.getTime() - startTime < 3000){
           if(robot.colorSensor.red() < robot.colorSensor.blue() && !movedServo){
-              robot.jewlX.setPosition(.28);
+              robot.jewlX.setPosition(.35);
               movedServo = true;
           }
           else if(robot.colorSensor.blue() < robot.colorSensor.red() && !movedServo){
-              robot.jewlX.setPosition(.13);
+              robot.jewlX.setPosition(.1);
               movedServo = true;
           }
       }
       else if(date.getTime() - startTime < 4000){
+          robot.jewlY.setPosition(.3);
+      }
+      else if(date.getTime() - startTime < 5000){
           robot.jewlX.setPosition(.2);
       }
-      else if(date.getTime() - startTime < 4500){
+      else if(date.getTime() - startTime < 5500){
           robot.jewlY.setPosition(0);
       }
 
-        else if(date.getTime() - startTime < 5000){
+        else if(date.getTime() - startTime < 6000){
           finished = true;
       }
 

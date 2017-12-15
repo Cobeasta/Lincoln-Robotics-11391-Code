@@ -33,8 +33,8 @@ public class TimedDriveStraight implements BasicCommand {
     public void execute(Hardware robot) {
         date = new Date();
         this.robot = robot;
-        robot.leftDrive.setPower(-power);
-        robot.rightDrive.setPower(-power);
+        robot.leftDrive.setPower(power);
+        robot.rightDrive.setPower(power);
 
     }
 

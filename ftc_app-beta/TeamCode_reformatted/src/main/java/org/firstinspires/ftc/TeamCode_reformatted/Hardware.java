@@ -10,11 +10,19 @@ import com.qualcomm.robotcore.hardware.HardwareMap;
 import com.qualcomm.robotcore.hardware.IntegratingGyroscope;
 import com.qualcomm.robotcore.hardware.Servo;
 
+import org.firstinspires.ftc.robotcore.external.navigation.VuforiaLocalizer;
+
 /**
  * Created by Coby on 12/1/2017.
  */
 
 public class Hardware {
+    //Vuforia
+    VuforiaLocalizer vuforia;
+
+
+
+
     HardwareMap hwMap;
     public BNO055IMU gyro;
    public Servo leftClaw;

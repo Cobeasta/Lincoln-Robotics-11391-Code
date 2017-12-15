@@ -55,7 +55,7 @@ public class LiftOpPOV_2Controller extends OpMode {
 
         double drive = -gamepad1.left_stick_y;
         double turn = gamepad1.right_stick_x;
-        turn *= .75;
+        turn *= 1;
         left = drive + turn;
         right = drive - turn;
         max = Math.max(left, right);
@@ -102,6 +102,8 @@ public class LiftOpPOV_2Controller extends OpMode {
         if(gamepad1.b){
             flipPosition += -.02;
         }
+        relicPosition = Range.clip(relicPosition, 0, 1);
+        flipPosition = Range.clip(flipPosition, 0, 1);
 
         robot.relicGrip.setPosition(Range.clip(relicPosition, 0, 1));
         robot.relicFlip.setPosition(Range.clip(flipPosition, 0, 1));

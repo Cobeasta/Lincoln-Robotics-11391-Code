@@ -13,4 +13,9 @@ public class BasicBlue extends AutonomousCommandGroup{
     public BasicBlue(){
         addSequential(new BlueJewl());
     }
+
+    @Override
+    public void addCommands() {
+
+    }
 }

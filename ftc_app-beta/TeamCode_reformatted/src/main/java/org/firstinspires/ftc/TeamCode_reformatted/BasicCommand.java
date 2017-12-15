@@ -18,7 +18,6 @@ public interface  BasicCommand {
      * Called once before the command is run
      */
     public  void init();
-
     /**
      * Called repeatedly until isFinsished returns true
      */
