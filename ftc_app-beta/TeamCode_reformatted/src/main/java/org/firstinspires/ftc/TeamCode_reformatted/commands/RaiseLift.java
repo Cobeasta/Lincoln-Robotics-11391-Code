@@ -15,27 +15,27 @@ public class RaiseLift implements BasicCommand {
     Hardware robot;
     int targetPosition;
     private boolean up = false;
-    public RaiseLift(boolean up){
+    public RaiseLift(Hardware robot, boolean up){
+        this.robot = robot;
         this.up = up;
         if(up){
-            targetPosition = 0;
+            targetPosition = -6000;
         }else{
-            targetPosition = 50;
+            targetPosition = 0;
         }
 
     }
     @Override
     public void init() {
-
+        robot.liftMotor.setTargetPosition(targetPosition);
+        robot.liftMotor.setMode(DcMotor.RunMode.RUN_TO_POSITION);
     }
 
     @Override
     public void execute(Hardware robot) {
         this.robot = robot;
-        robot.liftMotor.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
-        robot.liftMotor.setTargetPosition(targetPosition);
-        robot.liftMotor.setMode(DcMotor.RunMode.RUN_TO_POSITION);
-        robot.liftMotor.setPower(.6);
+
+        robot.liftMotor.setPower(1);
     }
 
     @Override
@@ -46,5 +46,8 @@ public class RaiseLift implements BasicCommand {
     @Override
     public void stop() {
         robot.liftMotor.setPower(0);
+    }
+    public int getTargetPosition(){
+        return targetPosition;
     }
 }

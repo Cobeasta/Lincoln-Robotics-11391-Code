@@ -11,13 +11,13 @@ import org.firstinspires.ftc.TeamCode_reformatted.commands.Wait;
 @Autonomous(name = "test lift motor", group = "test")
 public class TestLiftMotor extends AutonomousCommandGroup {
     public TestLiftMotor(){
-        addSequential(new RaiseLift(true));
-        addSequential(new Wait(1000));
-        addSequential(new RaiseLift(false));
+
     }
 
     @Override
     public void addCommands() {
-
+        addSequential(new RaiseLift(robot, true));
+        addSequential(new Wait(3000));
+        addSequential(new RaiseLift(robot, false));
     }
 }

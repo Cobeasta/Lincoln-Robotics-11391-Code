@@ -166,10 +166,13 @@ VuforiaTrackable relicTemplate;
             telemetry.addData("VuMark", "not visible");
         }
 
+        telemetry.addData("lift pos", robot.liftMotor.getCurrentPosition());
+        telemetry.addData("state: ", state);
+        telemetry.addData("target: ", robot.liftMotor.getTargetPosition());
+
         telemetry.update();
 
 
-        telemetry.addData("state: ", state);
 
     }
     public void addSequential(BasicCommand command){

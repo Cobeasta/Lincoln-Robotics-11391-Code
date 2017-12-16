@@ -80,8 +80,12 @@ public class LiftOpPOV_2Controller extends OpMode {
         }
 
         robot.liftMotor.setPower(gamepad2.left_stick_y);
-        robot.relicMotor.setPower(gamepad1.right_trigger);
-
+        if(gamepad1.right_trigger > 0) {
+            robot.relicMotor.setPower(gamepad1.right_trigger);
+        }
+        else{
+            robot.relicMotor.setPower(-gamepad1.left_trigger);
+        }
 
         claw_offset = Range.clip(claw_offset, 0, 1);
         if(gamepad2.left_bumper || gamepad2.right_bumper){
