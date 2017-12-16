@@ -12,7 +12,7 @@ import org.firstinspires.ftc.TeamCode_reformatted.commands.Wait;
 /**
  * Created by Coby on 12/13/2017.
  */
-@Autonomous(name = "red right",group = "")
+@Autonomous(name = "red angled position",group = "")
 public class RedRight extends AutonomousCommandGroup {
     public RedRight(){
 

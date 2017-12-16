@@ -30,7 +30,7 @@ public class JewlBlue extends LinearOpMode {
         waitForStart();
         runtime.reset();
 
-        robot.jewlServo.setPosition(.85);
+        robot.jewlX.setPosition(.85);
         runtime.reset();
         while(opModeIsActive() && runtime.seconds() < 2 && !isStopRequested()){
 
@@ -53,7 +53,7 @@ public class JewlBlue extends LinearOpMode {
 
         }
 
-        robot.jewlServo.setPosition(-.90);
+        robot.jewlX.setPosition(-.90);
 
         while(runtime.seconds() < 2 && opModeIsActive() && !isStopRequested()){
             robot.leftMotor.setPower(0);

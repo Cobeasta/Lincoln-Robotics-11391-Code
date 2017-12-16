@@ -13,7 +13,7 @@ import org.firstinspires.ftc.TeamCode_reformatted.commands.Wait;
 /**
  * Created by Coby on 12/14/2017.
  */
-@Autonomous(name = "blue right", group = "")
+@Autonomous(name = "blue angled position", group = "")
 public class BlueRight extends AutonomousCommandGroup {
     @Override
     public void addCommands() {

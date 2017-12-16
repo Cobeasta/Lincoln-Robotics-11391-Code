@@ -23,7 +23,6 @@ public class GyroOp extends OpMode {
 
     @Override
     public void loop() {
-        rotationVector = HardwareLiftBot.getRotationVector();
         telemetry.addData("x", rotationVector[0]);
         telemetry.addData("y", rotationVector[1]);
         telemetry.addData("z", rotationVector[2]);

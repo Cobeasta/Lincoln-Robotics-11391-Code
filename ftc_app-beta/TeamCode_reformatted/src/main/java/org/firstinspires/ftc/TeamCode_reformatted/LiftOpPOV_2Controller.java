@@ -1,5 +1,8 @@
 package org.firstinspires.ftc.TeamCode_reformatted;
 
+import android.media.AudioManager;
+import android.media.SoundPool;
+
 import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import com.qualcomm.robotcore.util.Range;
@@ -11,8 +14,8 @@ import com.qualcomm.robotcore.util.Range;
 public class LiftOpPOV_2Controller extends OpMode {
     private boolean isFast = true;
     private double motorScaleFactor;
-
-
+    private SoundPool sounds;
+    private int beepid;
 
 
 
@@ -24,6 +27,11 @@ public class LiftOpPOV_2Controller extends OpMode {
     double relicPosition = 0;
     @Override
     public void init() {
+           sounds = new SoundPool(1, AudioManager.USE_DEFAULT_STREAM_TYPE, 0);
+  //        beepid = sounds.load(hardwareMap.appContext, R.raw.Holly_Christmas, 1);
+
+        //  runtime.reset();
+
         isFast = true;
         //robot = new HardwareLiftBot(hardwareMap);
 
@@ -33,6 +41,9 @@ public class LiftOpPOV_2Controller extends OpMode {
 
     @Override
     public void loop() {
+        if(gamepad2.dpad_up){
+            sounds.pause(beepid);
+        }
         double left;
         double right;
         double max;

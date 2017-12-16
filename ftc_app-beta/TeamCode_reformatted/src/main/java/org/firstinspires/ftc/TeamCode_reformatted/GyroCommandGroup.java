@@ -1,6 +1,7 @@
 package org.firstinspires.ftc.TeamCode_reformatted;
 
 import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
+import com.qualcomm.robotcore.eventloop.opmode.Disabled;
 
 import org.firstinspires.ftc.TeamCode_reformatted.commands.GyroTurn;
 import org.firstinspires.ftc.TeamCode_reformatted.commands.Wait;
@@ -12,6 +13,7 @@ import org.firstinspires.ftc.robotcore.external.navigation.AxesReference;
  * Created by Coby on 12/12/2017.
  */
 @Autonomous(name = "gyro turn", group = "test")
+@Disabled
 public class GyroCommandGroup extends AutonomousCommandGroup {
     public GyroCommandGroup(){
 
