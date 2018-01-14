@@ -36,7 +36,7 @@ public class BlueJewl implements BasicCommand {
       }
 
       else if (date.getTime() - startTime < 2000) {
-            robot.jewlY.setPosition(.63);
+            robot.jewlY.setPosition(.67);
         }
 
       else if(date.getTime() - startTime < 3000){

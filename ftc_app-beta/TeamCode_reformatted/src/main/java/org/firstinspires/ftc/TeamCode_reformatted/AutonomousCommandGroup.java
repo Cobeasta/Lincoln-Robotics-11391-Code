@@ -169,7 +169,7 @@ VuforiaTrackable relicTemplate;
         telemetry.addData("lift pos", robot.liftMotor.getCurrentPosition());
         telemetry.addData("state: ", state);
         telemetry.addData("target: ", robot.liftMotor.getTargetPosition());
-
+        addTelemetry();
         telemetry.update();
 
 
@@ -182,6 +182,9 @@ VuforiaTrackable relicTemplate;
         return new Hardware(hardwareMap);
     }
 
+    public void addTelemetry(){
+
+    }
     /**
      * @deprecated
      * dOES NOT WORK YET

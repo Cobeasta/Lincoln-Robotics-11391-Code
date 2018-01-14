@@ -3,6 +3,7 @@ package org.firstinspires.ftc.TeamCode_reformatted;
 import com.qualcomm.hardware.bosch.BNO055IMU;
 import com.qualcomm.hardware.bosch.JustLoggingAccelerationIntegrator;
 import com.qualcomm.hardware.modernrobotics.ModernRoboticsI2cGyro;
+import com.qualcomm.robotcore.hardware.CRServo;
 import com.qualcomm.robotcore.hardware.ColorSensor;
 import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.DcMotorSimple;
@@ -35,7 +36,6 @@ public class Hardware {
     public   ColorSensor colorSensor;
     public static final double ROBOT_MID_SERVO = .5;
     BNO055IMU.Parameters parameters;
-
 
     public Hardware(HardwareMap hwMap) {
         this.hwMap = hwMap;

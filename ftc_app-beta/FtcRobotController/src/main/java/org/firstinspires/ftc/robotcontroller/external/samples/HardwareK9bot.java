@@ -99,5 +99,6 @@ public class HardwareK9bot
         claw = hwMap.get(Servo.class, "claw");
         arm.setPosition(ARM_HOME);
         claw.setPosition(CLAW_HOME);
+
     }
 }

@@ -106,16 +106,16 @@ public class LiftOpPOV_2Controller extends OpMode {
         }
 
         if(gamepad1.right_bumper){
-            relicPosition += .02;
+            relicPosition += .005;
         }
         if(gamepad1.left_bumper){
-          relicPosition -= .02;
+          relicPosition -= .005;
         }
         if(gamepad1.x){
-          flipPosition += .02;
+          flipPosition += .005;
         }
         if(gamepad1.b){
-            flipPosition += -.02;
+            flipPosition += -.005;
         }
         relicPosition = Range.clip(relicPosition, 0, 1);
         flipPosition = Range.clip(flipPosition, 0, 1);
