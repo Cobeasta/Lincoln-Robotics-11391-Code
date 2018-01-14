@@ -1,4 +1,4 @@
-package org.firstinspires.ftc.TeamCode_reformatted;
+package org.firstinspires.ftc.team_Teleop_Reformat;
 
 import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
 
@@ -13,7 +13,7 @@ import org.firstinspires.ftc.TeamCode_reformatted.commands.Wait;
  * Created by Coby on 12/13/2017.
  */
 @Autonomous(name = "red angled position",group = "")
-public class RedRight extends AutonomousCommandGroup {
+public class RedRight extends org.firstinspires.ftc.TeamCode_reformatted.AutonomousCommandGroup {
     public RedRight(){
 
 
