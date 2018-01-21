@@ -1,4 +1,4 @@
-package org.firstinspires.ftc.TeamCode_reformatted;
+package org.firstinspires.ftc.team_Teleop_Reformat;
 
 import com.qualcomm.hardware.bosch.BNO055IMU;
 import com.qualcomm.hardware.bosch.JustLoggingAccelerationIntegrator;
@@ -51,8 +51,6 @@ public class Hardware {
         parameters.accelerationIntegrationAlgorithm = new JustLoggingAccelerationIntegrator();
         gyro = hwMap.get(BNO055IMU.class, "gyro");
         gyro.initialize(parameters);
-
-
         leftClaw = hwMap.servo.get("left_claw");
         rightClaw = hwMap.servo.get("right_claw");
         jewlX = hwMap.servo.get("jewl_x");
@@ -63,7 +61,11 @@ public class Hardware {
 
         leftDrive = hwMap.dcMotor.get("left_drive");
         rightDrive = hwMap.dcMotor.get("right_drive");
+
         leftDrive.setDirection(DcMotorSimple.Direction.REVERSE);
+        leftDrive.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
+        rightDrive.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
+
         rightClaw.setDirection(Servo.Direction.REVERSE);
         liftMotor = hwMap.dcMotor.get("lift_motor");
         relicMotor = hwMap.dcMotor.get("relic_motor");

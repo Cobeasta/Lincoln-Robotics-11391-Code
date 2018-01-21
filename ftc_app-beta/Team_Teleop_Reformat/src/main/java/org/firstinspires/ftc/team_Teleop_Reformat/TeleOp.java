@@ -2,6 +2,8 @@ package org.firstinspires.ftc.TeamCode_reformatted;
 
 import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 
+import org.firstinspires.ftc.team_Teleop_Reformat.Hardware;
+
 /**
  * Created by Coby on 12/9/2017.
  */

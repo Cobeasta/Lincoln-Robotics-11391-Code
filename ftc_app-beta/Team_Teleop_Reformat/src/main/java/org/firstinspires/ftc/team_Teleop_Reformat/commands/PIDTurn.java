@@ -1,10 +1,9 @@
-package org.firstinspires.ftc.TeamCode_reformatted.commands;
+package org.firstinspires.ftc.team_Teleop_Reformat.commands;
 
-import com.qualcomm.robotcore.util.Range;
 
-import org.firstinspires.ftc.TeamCode_reformatted.BasicCommand;
-import org.firstinspires.ftc.TeamCode_reformatted.Hardware;
-import org.firstinspires.ftc.TeamCode_reformatted.PIDController;
+import org.firstinspires.ftc.team_Teleop_Reformat.Hardware;
+import org.firstinspires.ftc.team_Teleop_Reformat.PIDController;
+import org.firstinspires.ftc.team_Teleop_Reformat.commands.BasicCommand;
 import org.firstinspires.ftc.robotcore.external.navigation.AngleUnit;
 import org.firstinspires.ftc.robotcore.external.navigation.AxesOrder;
 import org.firstinspires.ftc.robotcore.external.navigation.AxesReference;
@@ -22,6 +21,7 @@ public class PIDTurn implements BasicCommand {
     private double initialDegree;
     private Hardware robot;
     private double degrees = 0;
+    private double accel = 0;
     Orientation angles;
     double leftDrive;
     double rightDrive;
@@ -68,7 +68,7 @@ public class PIDTurn implements BasicCommand {
 
     @Override
     public boolean isFinished() {
-        return correction < .1 ;
+        return correction < .1;
     }
 
     @Override

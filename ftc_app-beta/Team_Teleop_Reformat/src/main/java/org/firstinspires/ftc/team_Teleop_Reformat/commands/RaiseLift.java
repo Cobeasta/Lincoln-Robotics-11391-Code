@@ -1,10 +1,9 @@
-package org.firstinspires.ftc.TeamCode_reformatted.commands;
+package org.firstinspires.ftc.team_Teleop_Reformat.commands;
 
 import com.qualcomm.robotcore.hardware.DcMotor;
-import com.qualcomm.robotcore.hardware.configuration.MotorConfigurationType;
 
-import org.firstinspires.ftc.TeamCode_reformatted.BasicCommand;
-import org.firstinspires.ftc.TeamCode_reformatted.Hardware;
+import org.firstinspires.ftc.team_Teleop_Reformat.Hardware;
+import org.firstinspires.ftc.team_Teleop_Reformat.commands.BasicCommand;
 
 /**
  * Uses the encoder to move the lift to the proper position

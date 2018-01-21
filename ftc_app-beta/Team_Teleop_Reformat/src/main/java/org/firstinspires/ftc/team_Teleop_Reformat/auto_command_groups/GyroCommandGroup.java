@@ -1,13 +1,14 @@
-package org.firstinspires.ftc.TeamCode_reformatted;
+package org.firstinspires.ftc.team_Teleop_Reformat.auto_command_groups;
 
 import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
 import com.qualcomm.robotcore.eventloop.opmode.Disabled;
 
-import org.firstinspires.ftc.TeamCode_reformatted.commands.GyroTurn;
+import org.firstinspires.ftc.team_Teleop_Reformat.commands.GyroTurn;
 import org.firstinspires.ftc.TeamCode_reformatted.commands.Wait;
 import org.firstinspires.ftc.robotcore.external.navigation.AngleUnit;
 import org.firstinspires.ftc.robotcore.external.navigation.AxesOrder;
 import org.firstinspires.ftc.robotcore.external.navigation.AxesReference;
+import org.firstinspires.ftc.team_Teleop_Reformat.auto_command_groups.AutonomousCommandGroup;
 
 /**
  * Created by Coby on 12/12/2017.

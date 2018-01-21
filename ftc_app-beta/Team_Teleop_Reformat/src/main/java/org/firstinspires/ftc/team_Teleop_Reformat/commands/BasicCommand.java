@@ -1,4 +1,7 @@
-package org.firstinspires.ftc.TeamCode_reformatted;
+package org.firstinspires.ftc.team_Teleop_Reformat.commands;
+
+import org.firstinspires.ftc.TeamCode_reformatted.*;
+import org.firstinspires.ftc.team_Teleop_Reformat.Hardware;
 
 /**
  * Steps to create Command:

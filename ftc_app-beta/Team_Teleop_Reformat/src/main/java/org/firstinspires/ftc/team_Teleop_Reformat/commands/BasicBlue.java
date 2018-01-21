@@ -2,8 +2,8 @@ package org.firstinspires.ftc.TeamCode_reformatted.commands;
 
 import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
 
-import org.firstinspires.ftc.TeamCode_reformatted.AutonomousCommandGroup;
-import org.firstinspires.ftc.TeamCode_reformatted.BasicCommand;
+import org.firstinspires.ftc.team_Teleop_Reformat.auto_command_groups.AutonomousCommandGroup;
+import org.firstinspires.ftc.team_Teleop_Reformat.commands.BlueJewl;
 
 /**
  * Created by Coby on 12/9/2017.

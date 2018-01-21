@@ -1,4 +1,4 @@
-package org.firstinspires.ftc.TeamCode_reformatted;
+package org.firstinspires.ftc.team_Teleop_Reformat;
 
 import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
 import com.qualcomm.robotcore.eventloop.opmode.Disabled;
@@ -8,6 +8,7 @@ import org.firstinspires.ftc.TeamCode_reformatted.commands.TimeDriveTurn;
 import org.firstinspires.ftc.TeamCode_reformatted.commands.TimedDriveStraight;
 import org.firstinspires.ftc.TeamCode_reformatted.commands.ToggleClaws;
 import org.firstinspires.ftc.TeamCode_reformatted.commands.Wait;
+import org.firstinspires.ftc.team_Teleop_Reformat.auto_command_groups.AutonomousCommandGroup;
 
 /**
  * Created by Coby on 12/4/2017.

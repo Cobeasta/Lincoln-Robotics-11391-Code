@@ -1,4 +1,4 @@
-package org.firstinspires.ftc.TeamCode_reformatted;
+package org.firstinspires.ftc.team_Teleop_Reformat;
 
 import android.media.AudioManager;
 import android.media.SoundPool;
@@ -6,6 +6,8 @@ import android.media.SoundPool;
 import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import com.qualcomm.robotcore.util.Range;
+
+import org.firstinspires.ftc.team_Teleop_Reformat.Hardware;
 
 /**
  * Created by Coby on 10/7/2017.
