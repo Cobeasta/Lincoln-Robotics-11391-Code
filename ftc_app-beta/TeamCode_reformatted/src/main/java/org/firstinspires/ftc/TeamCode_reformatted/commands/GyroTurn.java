@@ -1,5 +1,7 @@
 package org.firstinspires.ftc.TeamCode_reformatted.commands;
 
+import com.qualcomm.robotcore.hardware.DcMotor;
+
 import org.firstinspires.ftc.TeamCode_reformatted.BasicCommand;
 import org.firstinspires.ftc.TeamCode_reformatted.Hardware;
 import org.firstinspires.ftc.robotcore.external.navigation.AngleUnit;
@@ -23,6 +25,7 @@ public class GyroTurn implements BasicCommand {
     Orientation angles;
     double initialDegree;
     Date date;
+    private double accel = 0;
 
     private final double degrees2Radians = (2*Math.PI)/360;
 
@@ -39,13 +42,17 @@ public class GyroTurn implements BasicCommand {
         startTime = new Date().getTime();
        initialDegree =  robot.gyro.getAngularOrientation(AxesReference.INTRINSIC, AxesOrder.ZYX, AngleUnit.DEGREES).firstAngle;
     degrees += initialDegree;
+        robot.leftDrive.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
+        robot.rightDrive.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
     }
 
     @Override
     public void execute(Hardware robot) {
         this.robot = robot;
+        accel = robot.gyro.getAcceleration().zAccel;
+
         if(new Date().getTime() - startTime < .02 ){
-            initialDegree = robot.gyro.getAngularOrientation(AxesReference.INTRINSIC, AxesOrder.ZYX, AngleUnit.DEGREES).firstAngle;
+            degrees = robot.gyro.getAngularOrientation(AxesReference.INTRINSIC, AxesOrder.ZYX, AngleUnit.DEGREES).firstAngle;
         }
             robot.leftDrive.setPower(-power);
             robot.rightDrive.setPower(power);
@@ -56,15 +63,7 @@ public class GyroTurn implements BasicCommand {
 
     @Override
     public boolean isFinished() {
-        if(degrees < 0){
-        return degrees - angles.firstAngle >= 0;
-        }
-        else if(degrees > 0){
-            return degrees -angles.firstAngle <= 0;
-        }
-        else{
-            return true;
-        }
+     return angles.firstAngle -degrees <= 5;
     }
 
     @Override
@@ -78,4 +77,10 @@ public class GyroTurn implements BasicCommand {
     String formatDegrees(double degrees){
         return String.format(Locale.getDefault(), "%.1f", AngleUnit.DEGREES.normalize(degrees));
     }
+    public double getAngle(){
+        if(angles != null) {
+            return angles.firstAngle;
+        }
+        return 0;
+        }
 }

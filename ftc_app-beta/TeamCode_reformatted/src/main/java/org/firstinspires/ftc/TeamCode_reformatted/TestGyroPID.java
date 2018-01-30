@@ -12,7 +12,7 @@ public class TestGyroPID extends AutonomousCommandGroup{
 PIDTurn pidTurn;
     @Override
     public void addCommands() {
-        pidTurn = new PIDTurn(90, robot, .03225, 0, 0, true);
+        pidTurn = new PIDTurn(90, robot,  true);
         addSequential(pidTurn);
     }
     @Override

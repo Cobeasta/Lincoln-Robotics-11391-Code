@@ -20,8 +20,8 @@ public class ToggleClaws implements BasicCommand {
     @Override
     public void execute(Hardware robot) {
         if(open) {
-            robot.leftClaw.setPosition(0);
-            robot.rightClaw.setPosition(0);
+            robot.leftClaw.setPosition(.5);
+            robot.rightClaw.setPosition(.5);
         }
         else{
             robot.leftClaw.setPosition(1);

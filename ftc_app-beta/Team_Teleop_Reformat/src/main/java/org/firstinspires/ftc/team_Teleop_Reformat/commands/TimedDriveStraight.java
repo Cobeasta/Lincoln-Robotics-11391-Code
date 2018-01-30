@@ -1,7 +1,7 @@
-package org.firstinspires.ftc.TeamCode_reformatted.commands;
+package org.firstinspires.ftc.team_Teleop_Reformat.commands;
 
 import org.firstinspires.ftc.team_Teleop_Reformat.commands.BasicCommand;
-import org.firstinspires.ftc.TeamCode_reformatted.Hardware;
+import org.firstinspires.ftc.team_Teleop_Reformat.Hardware;
 
 import java.util.Date;
 

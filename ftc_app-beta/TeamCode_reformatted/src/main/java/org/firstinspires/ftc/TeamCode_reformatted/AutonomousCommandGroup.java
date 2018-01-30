@@ -2,6 +2,10 @@ package org.firstinspires.ftc.TeamCode_reformatted;
 
 import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 
+import org.firstinspires.ftc.TeamCode_reformatted.commands.TimedDriveStraight;
+import org.firstinspires.ftc.TeamCode_reformatted.commands.ToggleClaws;
+import org.firstinspires.ftc.TeamCode_reformatted.commands.UseLiftByTime;
+import org.firstinspires.ftc.TeamCode_reformatted.commands.Wait;
 import org.firstinspires.ftc.robotcore.external.ClassFactory;
 import org.firstinspires.ftc.robotcore.external.matrices.OpenGLMatrix;
 import org.firstinspires.ftc.robotcore.external.matrices.VectorF;
@@ -20,13 +24,29 @@ import java.util.ArrayList;
 
 /**Steps to create CommandGroup
  * Created by Coby on 12/4/2017.
+ * extend Autonomous command group in a class.
+ * Add @Autonomous(name = "name"group = "group"
+ * Create fields below declaration of variables that need to be stored.
+ * Override the constructor to pass in parameters for the command.
+ * Set your above fields' values to what you pass into constructor.
+ *
+ * Override the addCommands  method.
+ *      In here: call addSequential for each command. Pass in a new Command. For example addSequential(new TimedDriveStraight(500, .5);
+ *
+ * If you want to add telemetry, override the addTelemetry method and access fields from each of your commands.
+ *
  */
 
+
 public abstract class AutonomousCommandGroup extends OpMode {
+   // public RelicRecoveryVuMark vuMark;
+
+
     State state = State.INIT;
     ArrayList<BasicCommand> commands;
     BasicCommand currCommand;
     protected Hardware robot;
+    public RelicRecoveryVuMark vuMark;
    protected VuforiaLocalizer vuforia;
     VuforiaTrackables relicTrackables;
 VuforiaTrackable relicTemplate;
@@ -37,6 +57,8 @@ VuforiaTrackable relicTemplate;
 
     }
     public abstract void addCommands();
+
+
     @Override
     public void init() {
          robot = new Hardware(hardwareMap);
@@ -95,6 +117,9 @@ VuforiaTrackable relicTemplate;
         telemetry.addData(">", "Press Play to start");
     }
 
+    /**
+     * This method manages the commands. This schedules the next command and calls the execute method of the command.
+     */
     @Override
     public void loop() {
         switch(state){
@@ -132,7 +157,8 @@ VuforiaTrackable relicTemplate;
 
 
         //Vuforia stuff
-        RelicRecoveryVuMark vuMark = RelicRecoveryVuMark.from(relicTemplate);
+
+         vuMark = RelicRecoveryVuMark.from(relicTemplate);
         if (vuMark != RelicRecoveryVuMark.UNKNOWN) {
 
                 /* Found an instance of the template. In the actual game, you will probably
@@ -175,6 +201,12 @@ VuforiaTrackable relicTemplate;
 
 
     }
+
+    /**
+     * Adds a command in sequential order.
+     *
+     * @param command The next command to run.
+     */
     public void addSequential(BasicCommand command){
         commands.add(command);
     }
@@ -182,6 +214,11 @@ VuforiaTrackable relicTemplate;
         return new Hardware(hardwareMap);
     }
 
+    /**
+     * Override me!
+     *
+     * This is where you telemetry.addData(). This is called after each run of the robot.
+     */
     public void addTelemetry(){
 
     }
@@ -195,8 +232,43 @@ VuforiaTrackable relicTemplate;
 
     }
 
-
+    /**
+     * Returns the current state of the current command.
+     */
     public enum State{
         INIT, EXECUTE, STOP, DONE;
+    }
+
+    /**
+     * Places the cube in the slot in front of the robot.
+     *  1. Drives forward
+     *  2. opens claws.
+     *  3. Drives backwards.
+     *  4. closes claws and lowers lift.
+     *  5. drives forward.
+     *  6. back off the block.
+     */
+    protected void placeBlock(){
+
+        //Place the block in the slot.
+        addSequential(new TimedDriveStraight(300, .5));
+        addSequential( new Wait(1000));
+        addSequential( new ToggleClaws(true));
+        addSequential(new Wait(1000));
+        addSequential(new ToggleClaws(true));
+        addSequential(new TimedDriveStraight(250, -.6));
+        addSequential(new Wait(1000));
+        addSequential(new ToggleClaws(false));
+        addSequential(new UseLiftByTime(-.5, 500));
+        addSequential(new Wait(500));
+        addSequential(new TimedDriveStraight(500, .6));
+        addSequential(new Wait(500));
+        addSequential(new TimedDriveStraight(200, -.5));
+    }
+    protected void initializeLift(){
+        addSequential(new ToggleClaws(false));
+        addSequential(new Wait(1000));
+        addSequential(new UseLiftByTime(.5, 500));
+
     }
 }

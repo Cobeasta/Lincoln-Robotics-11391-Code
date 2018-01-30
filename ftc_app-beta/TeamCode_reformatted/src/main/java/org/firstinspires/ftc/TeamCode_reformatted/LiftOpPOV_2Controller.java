@@ -76,10 +76,23 @@ public class LiftOpPOV_2Controller extends OpMode {
             right /= max;
 
         }
+        double leftSign, rightSign;
+        if(left <= 0){
+            leftSign = -1;
+        }
+        else{
+            leftSign =1;
+        }
+        if(right < 0){
+            rightSign = -1;
+        }
+        else{
+            rightSign = 1;
+        }
         left *= motorScaleFactor;
         right *= motorScaleFactor;
-        robot.leftDrive.setPower(left);
-        robot.rightDrive.setPower(right);
+        robot.leftDrive.setPower(leftSign * (left*left));
+        robot.rightDrive.setPower(rightSign * (right*right));
 
         if(gamepad2.right_bumper){
             claw_offset += claw_speed;

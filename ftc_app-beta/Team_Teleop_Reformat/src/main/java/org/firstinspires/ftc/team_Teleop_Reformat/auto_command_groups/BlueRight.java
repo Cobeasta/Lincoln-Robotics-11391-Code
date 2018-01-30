@@ -2,13 +2,13 @@ package org.firstinspires.ftc.team_Teleop_Reformat.auto_command_groups;
 
 import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
 
-import org.firstinspires.ftc.TeamCode_reformatted.commands.TimedDriveStraight;
 import org.firstinspires.ftc.TeamCode_reformatted.commands.ToggleClaws;
-import org.firstinspires.ftc.TeamCode_reformatted.commands.UseLiftByTime;
-import org.firstinspires.ftc.TeamCode_reformatted.commands.Wait;
+import org.firstinspires.ftc.team_Teleop_Reformat.commands.UseLiftByTime;
+import org.firstinspires.ftc.team_Teleop_Reformat.commands.Wait;
 import org.firstinspires.ftc.team_Teleop_Reformat.auto_command_groups.AutonomousCommandGroup;
 import org.firstinspires.ftc.team_Teleop_Reformat.commands.BlueJewl;
 import org.firstinspires.ftc.team_Teleop_Reformat.commands.GyroTurn;
+import org.firstinspires.ftc.team_Teleop_Reformat.commands.TimedDriveStraight;
 
 /**
  * Created by Coby on 12/14/2017.

@@ -13,7 +13,6 @@ import org.firstinspires.ftc.robotcore.external.navigation.AxesReference;
  * Created by Coby on 12/12/2017.
  */
 @Autonomous(name = "gyro turn", group = "test")
-@Disabled
 public class GyroCommandGroup extends AutonomousCommandGroup {
     public GyroCommandGroup(){
 
